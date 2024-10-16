@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Message Generator</title>
+</head>
+<body>
+    <h1>Click the button to get a random message:</h1>
+    <button id="messageButton">Generate Message</button>
+    <p id="message"></p>
+
+    <!-- Link the script module -->
+    <script type="module">
+        import { generateRandomMessage } from './randomMessage.js';
+
+        // Get the button and paragraph elements
+        const button = document.getElementById('messageButton');
+        const messageParagraph = document.getElementById('message');
+
+        // Add an event listener to the button to show the message
+        button.addEventListener('click', () => {
+            messageParagraph.textContent = generateRandomMessage();
+        });
+    </script>
+</body>
+</html>
